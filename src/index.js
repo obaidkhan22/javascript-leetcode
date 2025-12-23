@@ -18,3 +18,27 @@ Array.prototype.last = function () {
 // Note---> we can also use this.at(-1) to return the last element in array or iterable. But this.at() is general and used for strings, array. It also convert -1 to length-1 and also checks whether the operand can be indexed or not. so we are using index access which is super fast and uses the cached indexes to access the last element.
 
 //
+
+// ID: 2620 Counter
+
+const Counter = (number) => {
+  //constraints
+
+  // -1000<=n<=1000
+  // -1000<=calls<=1000
+
+  if (!Number.isInteger(n) || n < -1000 || n > 1000) {
+    throw new RangeError("n must be an integer in [-1000, 1000].");
+  }
+  let calls = 0;
+
+  return function () {
+    if (calls > 1000) {
+      throw new RangeError("Counter can called for a maximum of 1000 times.");
+    }
+    calls++;
+    return n++;
+  };
+};
+
+// ID:
