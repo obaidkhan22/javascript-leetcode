@@ -81,3 +81,19 @@ const singleNumber = function (nums) {
   }
   return result;
 };
+
+// ID: 387 Firsr Unique Character in a String
+
+const firstUniqueChar = function (string) {
+  let charMap = {};
+
+  for (let ch in s) {
+    charMap[ch] = (charMap[ch] ?? 0) + 1;
+  }
+  for (let i = 0; i < s.length; i++) {
+    if (charMap[s[i]] === 1) {
+      return i;
+    }
+  }
+  return -1;
+};
