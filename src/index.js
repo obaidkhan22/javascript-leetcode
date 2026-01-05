@@ -55,3 +55,22 @@ const twoSum = function (nums, target) {
     hashMap.set(current, i);
   }
 };
+
+// ID: 142 FizzBuzz
+const fizzbuzz = function (n) {
+  let result = [];
+  for (let i = 1; i <= n; i++) {
+    if (i % 15 === 0) {
+      result.push("FizzBuzz");
+    } else if (i % 3 === 0) {
+      result.push("Fizz");
+    } else if (i % 5 === 0) {
+      result.push("Buzz");
+    } else {
+      result.push(String(i));
+    }
+  }
+  return result;
+};
+
+console.log(fizzbuzz(15));
