@@ -41,4 +41,17 @@ const Counter = (number) => {
   };
 };
 
-// ID:
+// ID: 1. Two Sum
+
+const twoSum = function (nums, target) {
+  const hashMap = new Map();
+
+  for (let i = 0; i < nums.length; i++) {
+    const current = nums[i];
+    const complement = target - current;
+    if (hashMap.has(complement)) {
+      return [hashMap.get(complement), i];
+    }
+    hashMap.set(current, i);
+  }
+};
