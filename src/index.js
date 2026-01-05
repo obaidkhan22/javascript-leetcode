@@ -73,4 +73,11 @@ const fizzbuzz = function (n) {
   return result;
 };
 
-console.log(fizzbuzz(15));
+// ID: 136 SingleNumber in a array
+const singleNumber = function (nums) {
+  let result = 0;
+  for (const num of nums) {
+    result ^= num;
+  }
+  return result;
+};
