@@ -127,3 +127,10 @@ const isValid = function (s) {
 async function sleep(millis) {
   return new Promise((resolve) => setTimeout(resolve, millis));
 }
+
+// ID: 2667 -> create hello world function
+const createHelloWorldFunction = () => {
+  return function (...args) {
+    return "Hello World";
+  };
+};
