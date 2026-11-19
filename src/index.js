@@ -121,3 +121,9 @@ const isValid = function (s) {
 
   return stack.length === 0;
 };
+
+// 2621. Sleep
+
+async function sleep(millis) {
+  return new Promise((resolve) => setTimeout(resolve, millis));
+}
