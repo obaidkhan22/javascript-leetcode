@@ -180,3 +180,24 @@ const addBinary = function(a, b) {
 
   return result.reverse().join('');
 };
+
+
+
+// 100. Same Tree
+
+
+const isSameTree = function(p, q) {
+  // Both nodes are null
+  if (!p && !q) return true;
+
+  // One node is null
+  if (!p || !q) return false;
+
+  // Check values and subtrees
+  return (
+      p.val === q.val &&
+      isSameTree(p.left, q.left) &&
+      isSameTree(p.right, q.right)
+  );
+};
+
