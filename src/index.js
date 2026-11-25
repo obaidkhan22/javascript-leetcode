@@ -135,58 +135,49 @@ const createHelloWorldFunction = () => {
   };
 };
 
-
-
 // ID 35. Search Insert Position
 
-
-const searchInsert = function(nums, target) {
+const searchInsert = function (nums, target) {
   let left = 0;
   let right = nums.length;
 
   while (left < right) {
-      let mid = Math.floor((left + right) / 2);
+    let mid = Math.floor((left + right) / 2);
 
-      if (nums[mid] < target) {
-          left = mid + 1;
-      } else {
-          right = mid;
-      }
+    if (nums[mid] < target) {
+      left = mid + 1;
+    } else {
+      right = mid;
+    }
   }
 
   return left;
 };
 
-
 // 67. Add Binary
 
-
-
-const addBinary = function(a, b) {
+const addBinary = function (a, b) {
   let i = a.length - 1;
   let j = b.length - 1;
   let carry = 0;
   let result = [];
 
   while (i >= 0 || j >= 0 || carry) {
-      let sum = carry;
+    let sum = carry;
 
-      if (i >= 0) sum += Number(a[i--]);
-      if (j >= 0) sum += Number(b[j--]);
+    if (i >= 0) sum += Number(a[i--]);
+    if (j >= 0) sum += Number(b[j--]);
 
-      result.push(sum % 2);
-      carry = Math.floor(sum / 2);
+    result.push(sum % 2);
+    carry = Math.floor(sum / 2);
   }
 
-  return result.reverse().join('');
+  return result.reverse().join("");
 };
-
-
 
 // 100. Same Tree
 
-
-const isSameTree = function(p, q) {
+const isSameTree = function (p, q) {
   // Both nodes are null
   if (!p && !q) return true;
 
@@ -195,9 +186,28 @@ const isSameTree = function(p, q) {
 
   // Check values and subtrees
   return (
-      p.val === q.val &&
-      isSameTree(p.left, q.left) &&
-      isSameTree(p.right, q.right)
+    p.val === q.val &&
+    isSameTree(p.left, q.left) &&
+    isSameTree(p.right, q.right)
   );
 };
 
+// ID: 118 Pascal's Triangle
+
+const generateTriangle = (numRows) => {
+  const triangle = [];
+
+  for (let i = 0; i < numRows; i++) {
+    const rows = [];
+
+    for (j = 0; j <= i; j++) {
+      if (j === 0 || j === i) {
+        rows.push(1);
+      } else {
+        rows.push(triangle[i - 1][j - 1] + triangle[i - 1][j]);
+      }
+    }
+    triangle.push(rows);
+  }
+  return triangle;
+};
